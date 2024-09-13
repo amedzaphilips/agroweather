@@ -162,3 +162,31 @@ footer {
     padding: 10px;
 }
 
+
+/* For the large cover image in the intro section */
+.cover-image img {
+    max-width: 100%;  /* Ensures the image doesn't overflow its container */
+    height: auto;     /* Maintains the aspect ratio */
+    width: 1200px;    /* Sets a default width for larger screens */
+    object-fit: cover;
+}
+
+/* For feature images */
+.features-container .feature-item img {
+    max-width: 100%;  /* Makes the images responsive */
+    height: auto;     /* Keeps the original aspect ratio */
+    width: 400px;     /* Sets a default width for feature images */
+    border-radius: 10px; /* Optional: Adds rounded corners */
+}
+
+/* Media query for smaller screens to resize images */
+@media (max-width: 768px) {
+    .cover-image img {
+        width: 100%;  /* On smaller screens, ensure full width */
+    }
+
+    .features-container .feature-item img {
+        width: 100%;  /* Make feature images responsive on mobile */
+    }
+}
+
