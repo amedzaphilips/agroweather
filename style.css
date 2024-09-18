@@ -1,12 +1,13 @@
 /* General Styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    background: linear-gradient(135deg, #36595F, #304852); /* Background gradient from color theme */
 }
 
 header {
-    background-color: #2c3e50;
+    background-color: #304852; /* Dark muted blue-green from theme */
     padding: 10px 0;
     position: sticky;
     top: 0;
@@ -26,7 +27,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #B9DBE6; /* Light blue from theme */
     text-decoration: none;
     font-size: 16px;
 }
@@ -40,7 +41,7 @@ nav ul li a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f4f4f4;
+    background-color: rgba(255, 255, 255, 0.1); /* Light transparent background */
     padding: 50px 20px;
     text-align: center;
 }
@@ -51,25 +52,28 @@ nav ul li a:hover {
 
 .intro-content h1 {
     font-size: 48px;
-    color: #2c3e50;
+    color: #B9DBE6; /* Light blue for heading */
 }
 
 .intro-content p {
     font-size: 18px;
     margin: 10px 0;
+    color: #E0E0E0; /* Light grey for text */
 }
 
 .cta-button {
     padding: 10px 20px;
-    background-color: #27ae60;
+    background-color: #5F818A; /* Muted blue-grey from theme */
     color: white;
     text-decoration: none;
     border-radius: 5px;
     font-size: 16px;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .cta-button:hover {
-    background-color: #2ecc71;
+    background-color: #36595F; /* Darker blue-grey on hover */
+    transform: translateY(-3px);
 }
 
 .cover-image img {
@@ -83,12 +87,12 @@ nav ul li a:hover {
 #features {
     padding: 50px 20px;
     text-align: center;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
 }
 
 #features h2 {
     font-size: 36px;
-    color: #2c3e50;
+    color: #B9DBE6; /* Light blue for heading */
     margin-bottom: 30px;
 }
 
@@ -111,29 +115,29 @@ nav ul li a:hover {
 .feature-item h3 {
     font-size: 24px;
     margin-top: 10px;
-    color: #27ae60;
+    color: #5F818A; /* Muted blue-grey for subheading */
 }
 
 .feature-item p {
     font-size: 16px;
-    color: #7f8c8d;
+    color: #E0E0E0; /* Light grey for text */
 }
 
 /* About Section */
 #about {
-    background-color: #ecf0f1;
+    background-color: rgba(30, 35, 50, 0.8); /* Dark semi-transparent background */
     padding: 50px 20px;
     text-align: center;
 }
 
 #about h2 {
     font-size: 36px;
-    color: #2c3e50;
+    color: #B9DBE6; /* Light blue for heading */
 }
 
 #about p {
     font-size: 18px;
-    color: #7f8c8d;
+    color: #E0E0E0; /* Light grey for text */
 }
 
 #about ul {
@@ -147,7 +151,7 @@ nav ul li a:hover {
 
 #about ul li a {
     text-decoration: none;
-    color: #27ae60;
+    color: #5F818A; /* Muted blue-grey for links */
 }
 
 #about ul li a:hover {
@@ -156,37 +160,8 @@ nav ul li a:hover {
 
 /* Footer */
 footer {
-    background-color: #2c3e50;
+    background-color: #304852; /* Dark muted blue-green from theme */
     color: white;
     text-align: center;
     padding: 10px;
 }
-
-
-/* For the large cover image in the intro section */
-.cover-image img {
-    max-width: 100%;  /* Ensures the image doesn't overflow its container */
-    height: auto;     /* Maintains the aspect ratio */
-    width: 1200px;    /* Sets a default width for larger screens */
-    object-fit: cover;
-}
-
-/* For feature images */
-.features-container .feature-item img {
-    max-width: 100%;  /* Makes the images responsive */
-    height: auto;     /* Keeps the original aspect ratio */
-    width: 400px;     /* Sets a default width for feature images */
-    border-radius: 10px; /* Optional: Adds rounded corners */
-}
-
-/* Media query for smaller screens to resize images */
-@media (max-width: 768px) {
-    .cover-image img {
-        width: 100%;  /* On smaller screens, ensure full width */
-    }
-
-    .features-container .feature-item img {
-        width: 100%;  /* Make feature images responsive on mobile */
-    }
-}
-
