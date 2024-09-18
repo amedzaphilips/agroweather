@@ -1,0 +1,283 @@
+/* General body styling with new color theme */
+body {
+    background: linear-gradient(135deg, #36595F, #304852); /* Dark muted blue-green gradient */
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Weather container with responsive layout */
+#weather-container {
+    background: rgba(255, 255, 255, 0.1); /* Light transparent background */
+    max-width: 100%; /* Full width for responsiveness */
+    width: 350px; /* Base width for desktop */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7); /* Deeper shadow */
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Elegant border */
+    text-align: center;
+    transition: all 0.4s ease;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Heading style */
+h2 {
+    color: #B9DBE6; /* Light blue color */
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Input field styling */
+input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    margin-top: 15px;
+    font-size: 16px;
+    color: #fff;
+    background: #304852; /* Darker background for input */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+input:focus {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4); /* Focus animation */
+}
+
+/* Button styling */
+button {
+    background: #5F818A; /* Muted blue-grey color */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 15px;
+    width: 100%;
+    transition: background 0.3s ease, transform 0.2s ease;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+button:hover {
+    background: #36595F; /* Darker blue on hover */
+    transform: translateY(-3px); /* Slight hover animation */
+}
+
+/* Temperature display */
+#temp-div p {
+    font-size: 48px;
+    margin: 5px;
+    color: #B9DBE6; /* Light blue for temperature */
+    font-weight: 600;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Weather info */
+#weather-info p {
+    font-size: 12px;
+    color: #E0E0E0; /* Light grey text */
+    font-weight: 500;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Weather icon styling */
+#weather-icon {
+    width: 70px;
+    height: 70px;
+    margin: 15px auto;
+    display: none;
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+    animation: bounce 2s infinite;
+}
+
+/* Hourly forecast container */
+#hourly-forecast {
+    margin-top: 30px;
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: #444444 #2f2f2f;
+}
+
+/* Hourly item */
+.hourly-item {
+    flex: 0 0 auto;
+    width: 70px; /* Smaller item width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 12px;
+    background: rgba(30, 35, 50, 0.8); /* Dark semi-transparent */
+    padding: 8px;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    animation: fadeInUp 1.8s ease-in-out;
+}
+
+.hourly-item:hover {
+    transform: scale(1.05); /* Hover effect */
+}
+
+.hourly-item img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+/* Hourly heading */
+#hourly-heading {
+    color: #E0E0E0; /* Light grey */
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+/* Keyframe animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    #weather-container {
+        width: 90%; /* Adjust to full width on tablets and smaller */
+    }
+
+    #temp-div p {
+        font-size: 36px; /* Adjust temperature size */
+    }
+
+    h2 {
+        font-size: 22px; /* Adjust heading size */
+    }
+
+    button {
+        font-size: 14px;
+    }
+
+    #hourly-forecast {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    #weather-container {
+        width: 95%; /* Full width on mobile devices */
+        padding: 15px;
+    }
+
+    #temp-div p {
+        font-size: 28px; /* Smaller temperature display */
+    }
+
+    h2 {
+        font-size: 20px; /* Smaller heading */
+    }
+
+    button {
+        font-size: 12px;
+    }
+}
+
+/* Forecast container for horizontal layout */
+#forecast-container {
+    display: flex; /* Align items horizontally */
+    justify-content: space-between;
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+    white-space: nowrap; /* Prevent wrapping to the next line */
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+/* Each forecast item */
+.forecast-item {
+    flex: 0 0 100px; /* Each forecast item takes up fixed width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1); /* Transparent background for items */
+    padding: 10px;
+    border-radius: 10px;
+    margin-right: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Light shadow */
+    text-align: center;
+    min-width: 100px; /* Prevent the item from becoming too small */
+}
+
+/* Style for the text and image inside each forecast item */
+.forecast-item img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.forecast-item span {
+    font-size: 14px;
+    color: #fff;
+}
+
+/* Add a horizontal scrollbar if needed */
+#forecast-container::-webkit-scrollbar {
+    height: 8px; /* Height of scrollbar */
+}
+
+#forecast-container::-webkit-scrollbar-thumb {
+    background-color: #5F818A; /* Color of the scrollbar */
+    border-radius: 10px;
+}
+
+h3 {
+    color: #0598c9; /* Light blue color */
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: fadeIn 1s ease-in-out;
+}
